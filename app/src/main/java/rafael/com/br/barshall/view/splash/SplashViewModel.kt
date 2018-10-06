@@ -1,14 +1,11 @@
-package rafael.com.br.barshall.view.main
+package rafael.com.br.barshall.view.splash
 
 import android.arch.lifecycle.MutableLiveData
 import android.arch.lifecycle.ViewModel
-import android.util.Log
-import okhttp3.Response
 import rafael.com.br.barshall.Repository.SalaoRepository
 import rafael.com.br.barshall.model.ResponseStatus
-import rafael.com.br.barshall.model.StatusAPI
 
-class MainViewModel : ViewModel(){
+class SplashViewModel : ViewModel(){
 
     val salaoRepository = SalaoRepository()
     val responseStatus: MutableLiveData<ResponseStatus> = MutableLiveData()
