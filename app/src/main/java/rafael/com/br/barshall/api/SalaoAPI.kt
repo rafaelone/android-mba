@@ -13,4 +13,7 @@ interface SalaoAPI{
 
     @POST("/client/new")
     fun newClient(@Body client: Client): Call<Client>
+
+    @POST("/login/login-in")
+    fun logIn(@Body client: Client): Call<Client>
 }

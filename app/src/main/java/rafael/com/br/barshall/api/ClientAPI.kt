@@ -1,5 +1,6 @@
 package rafael.com.br.barshall.api
 
+import com.facebook.stetho.okhttp3.StethoInterceptor
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -22,6 +23,7 @@ class ClientApi<T> {
     fun getOkhttpClientAuth(): OkHttpClient.Builder{
         return OkHttpClient.Builder()
                 //.addInterceptor(AuthInterceptor())
+                .addNetworkInterceptor(StethoInterceptor())
                 .connectTimeout(30, TimeUnit.SECONDS)
                 .readTimeout(30, TimeUnit.SECONDS)
                 .writeTimeout(30, TimeUnit.SECONDS)

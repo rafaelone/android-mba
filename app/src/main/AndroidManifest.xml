@@ -3,6 +3,7 @@
     package="rafael.com.br.barshall">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -23,9 +24,10 @@
         <activity
             android:name=".view.login.LoginActivity"
             android:theme="@style/FullScreen" />
-        <activity android:name=".view.register.RegisterActivity"
-            android:theme="@style/FullScreen"
-            ></activity>
+        <activity
+            android:name=".view.register.RegisterActivity"
+            android:theme="@style/FullScreen" />
+        <activity android:name=".view.main.HomeActivity"></activity>
     </application>
 
 </manifest>
