@@ -1,6 +1,5 @@
-package rafael.com.br.barshall.Repository
+package rafael.com.br.barshall.repository
 
-import android.util.Log
 import rafael.com.br.barshall.api.getSalaoAPI
 import rafael.com.br.barshall.model.StatusAPI
 import retrofit2.Call

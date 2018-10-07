@@ -20,7 +20,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.login.LoginActivity"
+        <activity
+            android:name=".view.login.LoginActivity"
+            android:theme="@style/FullScreen" />
+        <activity android:name=".view.register.RegisterActivity"
             android:theme="@style/FullScreen"
             ></activity>
     </application>

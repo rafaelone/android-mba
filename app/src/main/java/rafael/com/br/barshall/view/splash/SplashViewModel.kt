@@ -2,7 +2,7 @@ package rafael.com.br.barshall.view.splash
 
 import android.arch.lifecycle.MutableLiveData
 import android.arch.lifecycle.ViewModel
-import rafael.com.br.barshall.Repository.SalaoRepository
+import rafael.com.br.barshall.repository.SalaoRepository
 import rafael.com.br.barshall.model.ResponseStatus
 
 class SplashViewModel : ViewModel(){
