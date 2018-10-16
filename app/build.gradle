@@ -4,6 +4,8 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
+apply plugin: 'kotlin-kapt'
+
 android {
     compileSdkVersion 27
     defaultConfig {
@@ -22,10 +24,11 @@ android {
     }
 }
 
-final arch_version = '1.1.0'
+final arch_version = '1.1.1'
 final retrofit_version = '2.3.0'
 final android_support_version = '27.1.1'
 final lottieVersion = '2.7.0'
+final room_version = "1.1.1"
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -45,4 +48,7 @@ dependencies {
 
     implementation 'com.facebook.stetho:stetho:1.5.0'
     implementation 'com.facebook.stetho:stetho-okhttp3:1.5.0'
+
+    implementation "android.arch.persistence.room:runtime:$room_version"
+    kapt "android.arch.persistence.room:compiler:$room_version"
 }
