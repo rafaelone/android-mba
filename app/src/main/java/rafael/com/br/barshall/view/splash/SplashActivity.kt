@@ -2,13 +2,16 @@ package rafael.com.br.barshall.view.splash
 
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
+import android.content.Context
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import android.util.Log
 import rafael.com.br.barshall.R
 import rafael.com.br.barshall.model.ResponseStatus
 import rafael.com.br.barshall.view.login.LoginActivity
+import rafael.com.br.barshall.view.main.HomeActivity
 
 class SplashActivity : AppCompatActivity() {
 
@@ -27,7 +30,17 @@ class SplashActivity : AppCompatActivity() {
 
     private var statusObserver = Observer<ResponseStatus> {
         if (it?.success == true) {
-            loading()
+            val sharedPreferences = getSharedPreferences("myapp", Context.MODE_PRIVATE)
+            val nome = sharedPreferences.getString("nome", "")
+            val id = sharedPreferences.getString("id", "")
+            if (nome != "" && id != null) {
+                val homeIntent = Intent(this, HomeActivity::class.java)
+                startActivity(homeIntent)
+                finish()
+            } else {
+                loading()
+            }
+
         }
 
     }

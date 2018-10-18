@@ -18,7 +18,6 @@ class LoginViewModel : ViewModel() {
         val client = Client(null, "", senha, email, "")
 
         clientRepository.logIn(client, onComplete = {
-
             responseStatus.value = ResponseStatus(true, "Login with sucess")
             cliente.value = it
 

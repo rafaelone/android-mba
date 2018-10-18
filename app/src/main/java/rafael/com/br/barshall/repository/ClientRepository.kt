@@ -1,5 +1,6 @@
 package rafael.com.br.barshall.repository
 
+import android.content.Context
 import android.util.Log
 import com.google.gson.Gson
 import org.json.JSONObject
@@ -32,13 +33,17 @@ class ClientRepository{
               onComplete: (Client?) -> Unit,
               onError: (Throwable?) -> Unit ){
 
+
+
         getSalaoAPI().logIn(client).enqueue(object: Callback<Client>{
             override fun onFailure(call: Call<Client>?, t: Throwable?) {
                 onError(t)
             }
 
             override fun onResponse(call: Call<Client>?, response: Response<Client>?) {
+                val dados = response?.body()
                 onComplete(response?.body())
+
             }
 
         })

@@ -2,9 +2,11 @@ package rafael.com.br.barshall.view.login
 
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
+import android.content.Context
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import com.facebook.stetho.Stetho
 import kotlinx.android.synthetic.main.activity_login.*
@@ -45,6 +47,14 @@ class LoginActivity : AppCompatActivity() {
 
     private var responseClienteObserver = Observer<Client> {
         if (it !== null) {
+
+            val sharedPreferences = getSharedPreferences("myapp", Context.MODE_PRIVATE)
+
+            val editor  = sharedPreferences.edit()
+            editor.putString("id", it.id.toString())
+            editor.putString("nome", it.nome.toString())
+            editor.apply()
+
             val homeIntent = Intent(this, HomeActivity::class.java)
             startActivity(homeIntent)
             finish()
